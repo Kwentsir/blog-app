@@ -1,24 +1,58 @@
-# README
+## Blog-APP
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+> Blog-APP is a classic example of a blogging website. Users can interact with the app by commenting, posting, and liking.
 
-Things you may want to cover:
+## Schema
+![](https://github.com/microverseinc/curriculum-rails/blob/main/blog-app/images/blog_app_erd.png)
 
-* Ruby version
+## Built With
 
-* System dependencies
+- Ruby
+- Ruby on Rails
+-  PostgreSQL
 
-* Configuration
+## Getting Started
 
-* Database creation
+To get a local copy up and running follow these simple example steps.
 
-* Database initialization
+1- Copy this link `https://github.com/Kwentsir/blog-app.git` <br>
+2- Get the directory that you want to clone the repository. <br>
+3- Open the command prompt in this directory. <br>
+4- Write `git clone git@github.com:Kwentsir/blog-app.git` <br>
+5- Go to the repository folder in your command prompt `cd blog-on-rails`. <br>
+6- Go to command line and run `rails server`.
 
-* How to run the test suite
+To setup linters on your local environment, please follow these steps.
 
-* Services (job queues, cache servers, search engines, etc.)
+1- Run `bundle install`.
+2- Run `rubocop .` for the errors.
 
-* Deployment instructions
+### Prerequisites
 
-* ...
+IDE(VSCode etc.), WSL(for Windows OS), for linters RuboCop
+
+## Authors
+👤 **Joseph Kwesi Kwentsir**
+
+- GitHub: [@Kwentsir](https://github.com/Kwentsir/)
+- Twitter: [@jkwentsir](https://twitter.com/jkwentsir)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/josephkwentsir/)
+
+
+## 🤝 Contributing
+
+Contributions, issues, and feature requests are welcome!
+
+Feel free to check the [issues page](../../issues/).
+
+## Show your support
+
+Give a ⭐️ if you like this project!
+
+## Acknowledgments
+
+-Thank you to Microverse Inc.
+
+## 📝 License
+
+This project is [MIT](./LICENSE.md) licensed.
