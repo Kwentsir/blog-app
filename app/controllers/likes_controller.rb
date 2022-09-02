@@ -1,5 +1,5 @@
 class LikesController < ApplicationController
-  def create 
+  def create
     @user = Current.user
     @post = Post.includes(:author).find(params[:post_id])
 
@@ -11,25 +11,25 @@ class LikesController < ApplicationController
     @like.post = @post
 
     flash[:notice] = if @like.save
-        'Successfully liked post.'
-    else
-        'Something went wrong'
-    end
+                       'Successfully liked post.'
+                     else
+                       'Something went wrong'
+                     end
 
     redirect_back_or_to user_post_path(@post.author, @post)
-end
+  end
 
-def destroy
-  @like = Current.user.likes.last
-  @like.destroy
-  @post = @like.post
-  flash[:notice] = 'You unlike this post'
-  redirect_back_or_to user_post_path(@post.author, @post)
-end
+  def destroy
+    @like = Current.user.likes.last
+    @like.destroy
+    @post = @like.post
+    flash[:notice] = 'You unlike this post'
+    redirect_back_or_to user_post_path(@post.author, @post)
+  end
 
-private 
+  private
 
-def likes_params
+  def likes_params
     params.permit(:author_id, :id)
-end
+  end
 end
