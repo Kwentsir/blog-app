@@ -10,3 +10,126 @@ body {
   padding: 16px;
   background-color: #eee;
 }
+
+.user_header {
+  display: flex;
+  align-items: center;
+  padding: 0 16px;
+  margin: 4px;
+  border-radius: 8px;
+  border: 1px solid #71c9ce;
+  justify-content: space-between;
+}
+
+.user_header_name {
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 23px;
+  color: #2e898e;
+  transition: all ease-in-out 0.3s;
+}
+
+.user_header_name:hover {
+  text-decoration: underline;
+  transform: scale(1.05);
+}
+
+.user_header_photo {
+  border-radius: 50%;
+  height: 80px;
+  width: 80px;
+  object-fit: fill;
+  margin-right: 20px;
+}
+
+.user_header p {
+  align-self: flex-end;
+  margin-bottom: 8px;
+  text-align: right;
+}
+
+.post_sum {
+  padding: 8px 16px;
+  margin-top: 20px;
+  border-radius: 8px;
+  border: 1px solid #71c9ce;
+}
+
+.post_sum h4 {
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+.post_sum h4 a {
+  text-decoration: none;
+  color: #2e898e;
+}
+
+.post_sum .text {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+}
+
+.post_sum .interactions {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  text-align: right;
+  justify-content: flex-end;
+}
+
+.comments {
+  padding: 8px 16px;
+  margin-top: 4px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  border: 1px solid #71c9ce;
+}
+
+.post_header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.post_header div {
+  display: flex;
+  align-items: center;
+}
+
+span {
+  color: dodgerblue;
+}
+
+.bio {
+  padding: 8px 16px;
+  margin: 20px 0;
+  border-radius: 8px;
+  border: 1px solid #71c9ce;
+}
+
+.bio h4 {
+  font-size: 18px;
+  color: #2e898e;
+}
+
+.all_posts {
+  margin: 20px auto;
+  display: flex;
+  justify-content: center;
+  text-decoration: none;
+  border-radius: 8px;
+  padding: 8px 16px;
+  font-weight: bold;
+  background-color: #2e898e;
+  color: white;
+  outline: none;
+  border: none;
+}
+
+.all_posts:hover {
+  text-decoration: none;
+  color: white;
+}
