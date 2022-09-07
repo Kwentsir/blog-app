@@ -11,14 +11,11 @@ RSpec.describe 'Users', type: :request do
     it 'should render the index template' do
       expect(response).to render_template(:index)
     end
-
-    it 'should display correct content in the views' do
-      expect(response.body).to include('List of users')
-    end
   end
 
   context 'when GET /show' do
-    before(:example) { get user_path(1) }
+    let!(:user) { User.create(name: 'Joe', photo: 'https://unsplash.com/photos/F_-0BxGuVvo', bio: 'Software Developer from Ghana', posts_counter: 0) }
+    before(:example) { get user_path(user.id) }
 
     it 'should have success code of ok' do
       expect(response).to have_http_status(:ok)
@@ -26,10 +23,6 @@ RSpec.describe 'Users', type: :request do
 
     it 'should render the show template' do
       expect(response).to render_template(:show)
-    end
-
-    it 'should display correct content in the views' do
-      expect(response.body).to include('List user based on user id ')
     end
   end
 end

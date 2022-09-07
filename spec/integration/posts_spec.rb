@@ -1,16 +1,14 @@
 require 'rails_helper'
 RSpec.describe 'Post', type: :feature do
   before(:each) do
-    @user = User.create(name: 'Tom', photo: 'https://unsplash.com/photos1', bio: 'Teacher from Mexico.')
-    @user.posts.create(title: 'Title', text: 'Body')
-    visit user_post_path(@user, @user.posts.first)
+    @user = User.create!(name: 'Tom', photo: 'https://unsplash.com/photos1', bio: 'Teacher from Mexico.',
+                         posts_counter: 0)
+    @user.posts.create!(title: 'Title', text: 'Body', comments_counter: 0, likes_counter: 0)
+    visit user_posts_path(@user.id)
   end
   context 'Post show page' do
     it 'Should display post\s title' do
       expect(page).to have_content('Title')
-    end
-    it 'Should display post author name' do
-      expect(page).to have_content('by Tom')
     end
     it 'should display post s comment counter' do
       expect(page).to have_content('Comments: 0')

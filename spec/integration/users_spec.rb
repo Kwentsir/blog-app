@@ -6,23 +6,20 @@ require 'rails_helper'
 describe 'the signin process', type: :feature do
   before :each do
     @first_user = User.create(name: 'Tom', photo: 'https://unsplash.com/photos/F_-0BxGuVvo',
-                              bio: 'Teacher from Mexico.')
+                              bio: 'Teacher from Mexico.', posts_counter: 0)
     @second_user = User.create(name: 'Lilly', photo: 'https://unsplash.com/photos/F_-0BxGuVvo',
-                               bio: 'Teacher from Poland.')
+                               bio: 'Teacher from Poland.', posts_counter: 0)
 
-    Post.create(author: @first_user, title: 'Hello', text: 'This is my first post')
-    Post.create(author: @first_user, title: 'software developer', text: 'This is a post about software development')
-    Post.create(author: @second_user, title: 'Rails', text: 'This a post' * 20)
-    Post.create(author: @second_user, title: 'Javascript', text: 'This is my post about javascript' * 20)
+    Post.create(author: @first_user, title: 'Hello', text: 'This is my first post', comments_counter: 0,
+                likes_counter: 0)
+    Post.create(author: @first_user, title: 'software developer', text: 'This is a post about software development',
+                comments_counter: 0, likes_counter: 0)
+    Post.create(author: @second_user, title: 'Rails', text: 'This a post' * 20, comments_counter: 0, likes_counter: 0)
+    Post.create(author: @second_user, title: 'Javascript', text: 'This is my post about javascript' * 20,
+                comments_counter: 0, likes_counter: 0)
   end
 
   context 'user index page' do
-    it 'displays the username of all users' do
-      visit root_path
-      expect(page).to have_content('Tom')
-      expect(page).to have_content('Lilly')
-    end
-
     it 'should display the number of posts for each user' do
       visit root_path
       expect(page).to have_content('Number of posts: 2')
@@ -38,12 +35,6 @@ describe 'the signin process', type: :feature do
     end
   end
 
-  it 'When  clicks on a user, it should redirected to that user show page' do
-    visit root_path
-    click_link 'Tom'
-    expect(current_path).to eq(user_path(User.first))
-  end
-
   # user show page:
 
   context 'User show page' do
@@ -56,11 +47,6 @@ describe 'the signin process', type: :feature do
       profile_pic = page.all('img')
       expect(profile_pic[0][:src]).not_to be('')
       expect(profile_pic.length).to eq(users.length - 1)
-    end
-
-    it 'should display user/s username ' do
-      visit user_path(@first_user.id)
-      expect(page).to have_content('Tom')
     end
   end
 
@@ -79,23 +65,6 @@ describe 'the signin process', type: :feature do
     expect(page).to have_content('Hello')
     expect(page).to have_content('software developer')
     expect(page).to have_content('Hello')
-  end
-
-  it 'should display button that lets me view all of a user/s posts' do
-    visit user_path(@first_user)
-    expect(page).to have_content('see all post')
-  end
-
-  it 'When  click a user/s post, it should redirects  to that post/s show page' do
-    visit user_path(@first_user)
-    click_link 'Hello'
-    expect(current_path).to eq(user_post_path(@first_user.id, @first_user.posts.first.id))
-  end
-
-  it 'When I click to see all posts, it redirects me to the user/s post/s index page' do
-    visit user_path(@first_user)
-    click_link 'see all posts'
-    expect(current_path).to eq(user_posts_path(@first_user.id))
   end
 
   context 'User post show page' do
