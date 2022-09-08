@@ -38,6 +38,11 @@ IDE(VSCode etc.), WSL(for Windows OS), for linters RuboCop
 - Twitter: [@jkwentsir](https://twitter.com/jkwentsir)
 - LinkedIn: [LinkedIn](https://www.linkedin.com/in/josephkwentsir/)
 
+👤 **Emmanuel Mensah**
+
+- GitHub: [@principle31](https://github.com/principles31)
+- Twitter: [@manuel31mens](https://Twiter.com/@Manuel31mens)
+- LinkedIn: [emmanuel-mensah](www.linkedin.com/in/emmanuel-mensah-)
 
 ## 🤝 Contributing
 

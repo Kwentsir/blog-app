@@ -67,4 +67,8 @@ group :development do
 
   # Speed up commands on slow machines / big apps [https://github.com/rails/spring]
   # gem "spring"
+  gem 'letter_opener', '~> 1.8', '>= 1.8.1'
+  # When mail is sent from your application, Letter Opener will open a preview in the browser instead of sending.
 end
+
+gem 'devise', '~> 4.8'
