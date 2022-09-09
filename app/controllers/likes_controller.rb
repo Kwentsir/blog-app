@@ -1,6 +1,6 @@
 class LikesController < ApplicationController
   def create
-    @user = Current.user
+    @user = current_user
     @post = Post.includes(:author).find(params[:post_id])
 
     @already_liked = Like.where(author: @user, post: @post)
@@ -20,7 +20,7 @@ class LikesController < ApplicationController
   end
 
   def destroy
-    @like = Current.user.likes.last
+    @like = current_user.likes.last
     @like.destroy
     @post = @like.post
     flash[:notice] = 'You unlike this post'
