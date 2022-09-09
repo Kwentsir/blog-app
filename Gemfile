@@ -71,5 +71,5 @@ group :development do
   # When mail is sent from your application, Letter Opener will open a preview in the browser instead of sending.
 end
 
-gem 'devise', '~> 4.8'
 gem 'cancancan'
+gem 'devise', '~> 4.8'
